@@ -1,0 +1,52 @@
+python manage.py makemigrations
+python manage.py migrate
+python manage.py runserver  192.168.11.14:8000
+
+python -m venv venv
+
+venv\Scripts\activate.bat
+
+pip install djangorestframework python-dotenv
+
+pip install djangorestframework-gis
+
+
+pip install django-cors-headers
+
+pip install psycopg2 psycopg2-binary
+
+pip install  
+
+pipwin install gdal
+
+pip install python-dotenv
+
+pip install djangorestframework python-dotenv djangorestframework-gis django-cors-headers psycopg2 psycopg2-binary pipwin
+
+#__________________ create super user 
+
+python manage.py createsuperuser
+
+#----------------------- clean super user tables
+
+python manage.py flush
+
+
+#copy this setting .py
+
+------------------------------------------------------------------------------------------------------------------------------
+
+from pathlib import Path
+import os
+
+if os.name == 'nt':
+    VENV_BASE = os.environ['VIRTUAL_ENV']
+    os.environ['PATH'] = os.path.join(VENV_BASE, 'Lib\\site-packages\\osgeo') + ';' + os.environ['PATH']
+    os.environ['PROJ_LIB'] = os.path.join(VENV_BASE, 'Lib\\site-packages\\osgeo\\data\\proj') + ';' + os.environ['PATH']
+
+
+__________________________________________________________________________________________________________________________________
+
+##Auto-generated Django model module
+
+python manage.py inspectdb > models.py
